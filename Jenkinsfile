@@ -7,6 +7,11 @@ pipeline {
                 sh 'ls -a'
             }
         }
+        stage("check pwd") {
+            steps {
+                sh 'pwd'
+            }
+        }
     }
     post {
         success {
