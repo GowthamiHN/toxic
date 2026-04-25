@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage("check ls") {
+        stage("default") {
             steps {
-                sh 'ls -a'
+                sh 'rm -rf /var/www/html/index.html'
             }
         }
-        stage("check pwd") {
+        stage("custom page") {
             steps {
-                sh 'pwd'
+                sh 'cp index.html /var/www/html/index.html'
             }
         }
     }
