@@ -2,16 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage("check nginx") {
+        stage("check jenkins") {
             steps {
-                sh 'sudo which nginx'
+                sh 'systemctl status jenkins'
             }
             post {
                 success {
-                    echo "working check nginx"
+                    echo "working check jenkins"
                 }
                 failure {
-                    echo "failure check nginx"
+                    echo "failure check jenkins"
                 }
             }
         }
