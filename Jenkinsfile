@@ -8,16 +8,24 @@ pipeline {
             }
             post {
                 success {
+                    echo "working install nginx"
+                }
+                failure {
+                    echo "failure install nginx"
+                }
+            }
+        }
+        stage("check nginx") {
+            steps {
+                sh 'sudo systemctl status nginx'
+            }
+            post {
+                success {
                     echo "working check nginx"
                 }
                 failure {
                     echo "failure check nginx"
                 }
-            }
-        }
-        stage("check list") {
-            steps {
-                sh 'ls'
             }
         }
     }
