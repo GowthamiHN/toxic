@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage("default") {
             steps {
-                sh 'rm -rf /var/www/html/index.html'
+                sh 'sudo rm -rf /var/www/html/index.html'
             }
         }
         stage("custom page") {
             steps {
-                sh 'cp index.html /var/www/html/index.html'
+                sh 'sudo cp index.html /var/www/html/index.html'
             }
         }
     }
