@@ -4,7 +4,15 @@ pipeline {
     stages {
         stage("check nginx") {
             steps {
-                sh 'which nginx'
+                sh 'sudo which nginx'
+            }
+            post {
+                success {
+                    echo "working check nginx"
+                }
+                failure {
+                    echo "failure check nginx"
+                }
             }
         }
         stage("check list") {
