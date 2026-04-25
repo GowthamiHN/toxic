@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Karnataka Cities Explorer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    background:#f4f7fb;
+    color:#222;
+    scroll-behavior:smooth;
+}
+header{
+    background:linear-gradient(135deg,#0d47a1,#1976d2);
+    color:white;
+    padding:20px 40px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+nav ul li a:hover{
+    color:#ffeb3b;
+}
+
+.hero{
+    min-height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1596176530529-78163a4b1b46?auto=format&fit=crop&w=1400&q=80') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+.hero-content h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+.hero-content p{
+    font-size:20px;
+    max-width:700px;
+    margin:auto;
+}
+.btn{
+    margin-top:25px;
+    display:inline-block;
+    padding:14px 28px;
+    background:#ff9800;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+.btn:hover{
+    background:#e68900;
+}
+
+.section{
+    padding:60px 30px;
+}
+.title{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:40px;
+    color:#0d47a1;
+}
+
+.search-box{
+    max-width:500px;
+    margin:0 auto 40px;
+}
+.search-box input{
+    width:100%;
+    padding:14px;
+    border:2px solid #1976d2;
+    border-radius:30px;
+    outline:none;
+    font-size:16px;
+}
+
+.city-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-8px);
+}
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+.card-content{
+    padding:20px;
+}
+.card-content h3{
+    color:#1976d2;
+    margin-bottom:10px;
+}
+.card-content p{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:10px;
+}
+.info{
+    font-size:14px;
+    color:#555;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    align-items:center;
+}
+.about img{
+    width:100%;
+    border-radius:15px;
+}
+.about-text p{
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+    .hero-content h1{
+        font-size:36px;
+    }
+    .hero-content p{
+        font-size:16px;
+    }
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div class="logo">Karnataka Cities</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#cities">Cities</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Explore Karnataka</h1>
+<p>Discover the beauty, technology, heritage, food, and tourism of Karnataka's most famous cities.</p>
+<a href="#cities" class="btn">Explore Cities</a>
+</div>
+</section>
+
+<section class="section" id="cities">
+<h2 class="title">Popular Cities</h2>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search city name...">
+</div>
+
+<div class="city-grid" id="cityGrid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1588416499018-d6b3ef9c0d70?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Bengaluru</h3>
+<p>The capital city of Karnataka, known as the Silicon Valley of India. Famous for IT companies, startups, nightlife, and parks.</p>
+<div class="info">Population: 1.3 Crore | Famous: Tech Hub</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1619946794135-5bc917a27793?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Mysuru</h3>
+<p>Known for Mysore Palace, Dasara festival, silk sarees, sandalwood, and royal heritage.</p>
+<div class="info">Population: 12 Lakh | Famous: Palace City</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Mangaluru</h3>
+<p>Beautiful coastal city known for beaches, ports, seafood, and educational institutions.</p>
+<div class="info">Population: 6 Lakh | Famous: Port City</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Hubballi</h3>
+<p>Major commercial center of North Karnataka, known for industries and transportation.</p>
+<div class="info">Population: 10 Lakh | Famous: Business Hub</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Belagavi</h3>
+<p>Important city near Maharashtra border known for industries, military establishments, and pleasant weather.</p>
+<div class="info">Population: 8 Lakh | Famous: Industrial City</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Kalaburagi</h3>
+<p>Historic city known for forts, mosques, educational institutes, and rich culture.</p>
+<div class="info">Population: 7 Lakh | Famous: Heritage City</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="about">
+<h2 class="title">About Karnataka</h2>
+
+<div class="about">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80">
+
+<div class="about-text">
+<p>Karnataka is one of the most vibrant states in India, blending modern cities with ancient culture and natural beauty.</p>
+<p>It is famous for technology, heritage sites, beaches, wildlife, hill stations, waterfalls, temples, and delicious cuisine.</p>
+<p>From Bengaluru's innovation to Mysuru's royal history and Mangaluru's coastal charm, Karnataka offers something for everyone.</p>
+</div>
+</div>
+</section>
+
+<footer id="contact">
+<p>© 2026 Karnataka Cities Explorer | Designed with HTML, CSS & JavaScript</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
+
+searchInput.addEventListener("keyup", function(){
+    let value = this.value.toLowerCase();
+
+    cards.forEach(card=>{
+        let city = card.querySelector("h3").textContent.toLowerCase();
+
+        if(city.includes(value)){
+            card.style.display="block";
+        }else{
+            card.style.display="none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
